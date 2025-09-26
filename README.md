@@ -23,6 +23,7 @@ The Network port scanner project aimed to establish a foundational understanding
 
 Step 1: open your code editor and create a new python file
 Step 2: import socket library
+step 3: run the code and enter your IP address and the starting port and ending port that need to be scanned
 
 
 *Ref 1: Network Diagram*

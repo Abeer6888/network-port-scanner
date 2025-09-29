@@ -57,10 +57,10 @@ def scan(host, ports):
 if __name__ == "__main__":
     target = "127.0.0.1"
     ports_list = [21, 22, 80, 443, 8080]
-    scan(target, ports_list)```
+    scan(target, ports_list)
+```
+### Technical breakdown
 
-
-### Technical Breakdown
 the key python networking components used:
 | Component                                       |      Explanation  |
 |-----------------------------------------------|----------------------------|
@@ -70,11 +70,13 @@ the key python networking components used:
 |  s.connect_ex((ip, port))    |executes a TCP threeway handshake attempt |
 
 
-## Step by step implementation
+## Ports Outcomes
+### Technical Breakdown of Port Scan Outcomes
 
-Step 1: open your code editor and create a new python file
-Step 2: import socket library
-step 3: run the code and enter your IP address and the starting port and ending port that need to be scanned
+The script performs a TCP Connect Scan for each port. The status is determined by the target's network response:
 
-
-
+| Network Event | Code Action | Final Port Status |
+| :--- | :--- | :--- |
+| **TCP SYN-ACK is received** | `s.connect()` succeeds, the `try` block executes. | **Open** (Printed) |
+| **TCP RST is received** | `s.connect()` raises `socket.error`, the `except` block catches it. | **Closed** (Silent) |
+| **Connection times out (0.5s)** | `s.connect()` raises `socket.error` (specifically, `socket.timeout`), the `except` block catches it. | **Filtered** (Silent) |

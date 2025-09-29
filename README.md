@@ -19,7 +19,7 @@ The Network port scanner project aimed to establish a foundational understanding
 - Command Line Interface (CLI)
 - Text editor
 
-### The code
+### The Code
 This script uses python's built in socket library to scan a range of ports on a specified host.
 ```python
 import socket
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     ports_list = [21, 22, 80, 443, 8080]
     scan(target, ports_list)
 ```
-### Technical breakdown
+### Technical Breakdown
 
 the key python networking components used:
 | Component                                       |      Explanation  |

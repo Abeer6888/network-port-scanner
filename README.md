@@ -80,3 +80,8 @@ The script performs a TCP Connect Scan for each port. The status is determined b
 | **TCP SYN-ACK is received** | `s.connect()` succeeds, the `try` block executes. | **Open** (Printed) |
 | **TCP RST is received** | `s.connect()` raises `socket.error`, the `except` block catches it. | **Closed** (Silent) |
 | **Connection times out (0.5s)** | `s.connect()` raises `socket.error` (specifically, `socket.timeout`), the `except` block catches it. | **Filtered** (Silent) |
+
+Ref 1: scan outcome
+
+<img width="561" height="92" alt="image" src="https://github.com/user-attachments/assets/1c48ba12-4139-4bf2-934c-f1d2acfa30f3" />
+
